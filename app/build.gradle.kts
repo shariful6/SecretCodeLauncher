@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.easylife.secretcode"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.easylife.secretcode"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -59,6 +59,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    /*implementation("androidx.navigationevent:navigationevent-android:1.0.1")
+    implementation("androidx.navigationevent:navigationevent-compose-android:1.0.1")
+    implementation("androidx.activity:activity-ktx:1.12.2")
+    implementation("androidx.activity:activity-compose:1.12.2")
+    implementation("androidx.activity:activity:1.12.2")*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

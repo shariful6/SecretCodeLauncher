@@ -21,3 +21,16 @@ class SecretCodeReceiver: BroadcastReceiver() {
 
 
 }
+
+class ActivationCodeReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        if ("android.provider.Telephony.SECRET_CODE" == intent.action && intent.dataString!!
+                .split("://".toRegex()).dropLastWhile { it.isEmpty() }
+                .toTypedArray()[1].equals("777", ignoreCase = true)
+        ) {
+            val intent2 = Intent(context, MainActivity::class.java)
+            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent2)
+        }
+    }
+}
